@@ -7,7 +7,10 @@ import java.awt.Font;
 import java.awt.Image;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
-import java.util.Timer;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+
+import javax.swing.Timer;
 
 public class tut1 extends JPanel implements ActionListener {
     
@@ -25,7 +28,7 @@ public class tut1 extends JPanel implements ActionListener {
 
     Image heart , ghost , up , down , left , right;
 
-    int pacman_x , pacman_y , pacman_dx , pacman_dy , req_dx , req_dy;
+    int pacman_x , pacman_y , pacman_dx , pacman_dy , req_dx , req_dy;// all for pacman
     short levelData[] = {
     	19, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 18, 22,
         17, 16, 16, 16, 16, 24, 16, 16, 16, 16, 16, 16, 16, 16, 20,
@@ -67,9 +70,76 @@ public class tut1 extends JPanel implements ActionListener {
 
     void initVariables(){
         screen_data = new short[ Blocks_1D * Blocks_1D];
-        d = 
+        d = new Dimension(400, 400);
+        ghost_x = new int [Max_ghosts];
+        ghost_y = new int [Max_ghosts];
+        ghost_dx = new int [Max_ghosts];
+        ghost_dy = new int [Max_ghosts];
+        dx = new int[4];
+        dy = new int[4];
+
+        timer = new Timer(40, this);
+        timer.restart();        
+
     }
 
+    void initGame(){
+        lives = 3;
+        score = 0;
+        initlevel();
+        ghosts = 6;
+        currentSpeed = 3;
+    }
+
+    void initlevel(){
+        for (int i = 0; i < Blocks_1D* Blocks_1D; i++) {
+            screen_data[i] = levelData[i];
+        }
+    }
+
+    void continuelevel(){ // defines position of the ghosts
+        int dy = 1;
+        int random;
+        for (int i = 0; i < ghosts; i++) {
+            ghost_y[i] = 4 * BLOCK_SIZE;
+            ghost_x[i] = 4 * BLOCK_SIZE;
+            ghost_dx[i] = 
+        }
+    }
+
+    class TAdapter extends KeyAdapter{
+        public void keyPressed( KeyEvent e){
+            int key = e.getKeyCode();
+
+            if ( game_check ){
+                if (key == KeyEvent.VK_LEFT) {
+                    req_dx = -1;
+                    req_dy = 0;
+                }
+                else if (key == KeyEvent.VK_RIGHT) {
+                    req_dx = 1;
+                    req_dy = 0;
+                }
+                else if (key == KeyEvent.VK_UP) {
+                    req_dx = 0;
+                    req_dy = -1;
+                }
+                else if (key == KeyEvent.VK_DOWN) {
+                    req_dx = 0;
+                    req_dy = 1;
+                }
+                else if (key == KeyEvent.VK_ESCAPE && timer.isRunning()) {
+                    game_check = false;
+                }
+            }
+            else{
+                if (key == KeyEvent.VK_ESCAPE) {
+                    game_check = true;
+                    initGame();
+                }
+            }
+        }
+    }
 
 
 
