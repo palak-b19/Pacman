@@ -1,10 +1,3 @@
 # pacman_game
-<<<<<<< HEAD
 
-A famous 2D game pacman implemented using java librarires such as swing
-
-This is a simple game that uses swing library to build a simple implementation of the pacman game.
-=======
- A famous 2D game pacman implemented using java librarires such as swing
- \n library ki spelling galat hai
->>>>>>> 76e0d1722269776eb17e254c417e5afbdc0ee4b0
+We present our meticulously designed Java implementation of the renowned 2D game, Pac-Man, leveraging the capabilities of the Swing library. This elegantly crafted rendition offers players the opportunity to control Pac-Man through intricate mazes, partaking in the consumption of pellets while strategically avoiding pursuit by animated ghosts. Our application encapsulates the essence of retro gaming, providing an intellectually stimulating and engaging experience for enthusiasts across generations. Embrace the timeless allure of Pac-Man as it unfolds through the finesse of Java, manifesting a captivating and intellectual pursuit of gaming excellence.
