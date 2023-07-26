@@ -81,6 +81,8 @@ public class Model extends JPanel implements ActionListener{
     timer.restart();
     }
 
+    private void playGame(Graphics2d g2d)[]
+
     private void initGame(){
         //starts the game
         lives =3 ;
@@ -99,6 +101,7 @@ public class Model extends JPanel implements ActionListener{
         }
     }
 
+
     private void continueLevel(){
         // position of the ghost
         int i;
@@ -110,8 +113,28 @@ public class Model extends JPanel implements ActionListener{
             ghost_dx[i]=dx;
             dx=-dx;
             random=(int)(math.random() * (currentSpeed+1));
-            //random speed
+
+            if (random>currentSpeed){
+                random = currentSpeed;
+            }
+
+            ghostSpeed[i] = validSpeeds[random];
+
+            pacman_x=7*BLOCK_SIZE;
+            pacman_y = 11*BLOCK_size;
+            pacmand_x=0;
+            pacmand_y=0;
+            req_dx=0;
+            req_dy=0;
+
+            //random speed 
         }
+    }
+
+    public void paintComponents(Graphics g){
+        super.paintComponent(g);
+        // constructor of the parent class
+
     }
 
     class TAdapter extends KeyAdapter{
