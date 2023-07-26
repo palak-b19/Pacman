@@ -2,9 +2,14 @@ package pacman;
 
 import javax.swing.ImageIcon;
 import javax.swing.JPanel;
+
+import java.awt.Color;
 import java.awt.Dimension;
 import java.awt.Font;
+import java.awt.Graphics;
+import java.awt.Graphics2D;
 import java.awt.Image;
+import java.awt.Toolkit;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyAdapter;
@@ -97,14 +102,54 @@ public class tut1 extends JPanel implements ActionListener {
         }
     }
 
+    void playGame( Graphics2D g2d){
+
+    }
+
     void continuelevel(){ // defines position of the ghosts
-        int dy = 1;
+        int dx = 1;
         int random;
         for (int i = 0; i < ghosts; i++) {
             ghost_y[i] = 4 * BLOCK_SIZE;
             ghost_x[i] = 4 * BLOCK_SIZE;
-            ghost_dx[i] = 
+            ghost_dy[i] = 0;
+            ghost_dx[i] = dx;
+            dx = -dx;
+            random = (int)(Math.random()*(currentSpeed + 1));
+
+            if (random > currentSpeed) {
+                random = currentSpeed;
+            }
+
+            ghostspeed[i] = validSpeeds[random];
         }
+
+        pacman_x = 7 * BLOCK_SIZE;
+        pacman_y = 11 * BLOCK_SIZE;
+        pacman_dx = 0;
+        pacman_dy = 0;
+        req_dx = 0;
+        req_dy = 0;
+        dying = false;
+    }
+
+    void paintComponent( Graphics g){
+        super.paintComponent(g);
+
+        Graphics2D g2d = ( Graphics2D ) g;
+        g2d.setColor(( Color.black));
+        g2d.fillRect(0, 0, d.width, d.height);
+
+        drawMaze(g2d);
+        drawScore(g2d);
+
+        if( game_check){
+            playGame(g2d);
+        }
+        else{
+            showIntroScreen(g2d);
+        }
+        Toolkit.getDefaultToolkit().sync();
     }
 
     class TAdapter extends KeyAdapter{
