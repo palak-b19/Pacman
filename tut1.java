@@ -69,7 +69,7 @@ public class tut1 extends JPanel implements ActionListener {
         up = new ImageIcon("C:\\Users\\Shrutya\\Downloads\\images\\up.gif").getImage();
         left = new ImageIcon("C:\\Users\\Shrutya\\Downloads\\images\\left.gif").getImage();
         right = new ImageIcon("C:\\Users\\Shrutya\\Downloads\\images\\right.gif").getImage();
-        ghost = new ImageIcon("C:\\Users\\Shrutya\\Downloads\\images\\ghost.gif").getImage();
+        ghost = new ImageIcon("C:\Users\palak\Downloads\pac-man-ghost.gif").getImage();
         heart = new ImageIcon("C:\\Users\\Shrutya\\Downloads\\images\\heart.gif").getImage();        
     }
 
