@@ -3,14 +3,17 @@ import java.awt.event.ActinEvent;
 
 public class Model extends JPanel implements ActionListener{
     private Dimension d;
-    private finl Font smallFont = new Font("Arial");
+    private final Font smallFont = new Font("Arial");
     private boolean inGame = false;
+    //means if game has started 
     private boolean dying = false;
 
     private final int BLOCK_SIZE = 24;
     private final int N_BLOCKS = 15;
     private final int SCREEN_SIZE = N_BLOCKS * BLOCK_SIZE;
     private final int MAX_GHOSTS = 12;
-    private fina int PACMAN_SPEED
+    //enemies
+
+    private final int PACMAN_SPEED
 
 }
