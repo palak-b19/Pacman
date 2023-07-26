@@ -63,8 +63,35 @@ public class Model extends JPanel implements ActionListener{
     }
 
     private void initVariables(){
-        screenData = new short[N_BLOCKS * N_BLOCKS]
+        screenData = new short[N_BLOCKS * N_BLOCKS];
+        d= new Dimension(400,400);
+        ghost_x= new int[MAX_GHOSTS];
+        ghost_y = new int[MAX_GHOSTS];
+        ghost_dx= new int[MAX_GHOSTS];
+        ghost_dy= new int[MAX_GHOSTS];
+        dx = new int[4];
+        dy= new int[4];
+
+    
+
+    timer = new Timer(40,this);
+    // timer shows how many times a particular image gets relodaded or similar
+    // 400 means 400 times and so on
+    //game redrawn evry 40 ms
+    timer.restart();
     }
+
+    class TAdapter extends KeyAdapter{
+        public void KeyPressed(KeyEvent e){
+            int key = e.getKeyCode();
+
+            if (inGame){
+                if(key==K)
+            }
+        }
+    }
+
+
 
 
 }
