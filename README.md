@@ -50,12 +50,11 @@ Pacman Java Game is a classic arcade game implemented in Java, featuring the ico
 ## Future Enhancements
 
 - **Levels:**
-  Implement multiple levels with increasing difficulty.
+  Implementing multiple levels with increasing difficulty.
 
 - **Sound Effects:**
-  Add sound effects to enhance the gaming experience.
+  Adding sound effects to enhance the gaming experience.
 
 - **High Score Tracking:**
-  Incorporate a high-score system to encourage competition.
+  Incorporating a high-score system to encourage competition.
 
-Feel free to contribute to the project and explore new features to enhance the Pacman Java Game experience!
