@@ -34,10 +34,6 @@ Pacman Java Game is a classic arcade game implemented in Java, featuring the ico
 - **Score Tracking:**
   Keep track of your score as you collect points and navigate the maze.
 
-## Screenshots
-
-[Include screenshots of the gameplay to showcase the visual elements and dynamics of the game.]
-
 ## Dependencies
 
 - **Java Swing Library:**
